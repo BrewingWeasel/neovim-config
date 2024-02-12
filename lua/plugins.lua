@@ -33,6 +33,11 @@ require("lazy").setup({
       opts = {}
    },
    {
+      'numToStr/Comment.nvim',
+      opts = { },
+      lazy = false,
+   },
+   {
       'nvim-telescope/telescope.nvim', tag = '0.1.5',
       event = "VeryLazy",
       dependencies = { 'nvim-lua/plenary.nvim' },
