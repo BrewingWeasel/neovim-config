@@ -38,6 +38,11 @@ require("lazy").setup({
       lazy = false,
    },
    {
+      "lewis6991/gitsigns.nvim",
+      opts = {},
+      lazy = false,
+   },
+   {
       'nvim-telescope/telescope.nvim', tag = '0.1.5',
       event = "VeryLazy",
       dependencies = { 'nvim-lua/plenary.nvim' },
