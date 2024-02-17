@@ -155,13 +155,13 @@ require("lazy").setup({
 		config = function()
 			local builtin = require("telescope.builtin")
 
-			vim.keymap.set("n", "<leader>ff", builtin.git_files, {}) -- TODO: descriptions
-			vim.keymap.set("n", "<leader>fF", builtin.find_files, {})
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-			vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-			vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-			vim.keymap.set("n", "gr", builtin.lsp_references, {})
-			vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
+			vim.keymap.set("n", "<leader>ff", builtin.git_files, { desc = "[f]ind git [f]iles" }) -- TODO: descriptions
+			vim.keymap.set("n", "<leader>fF", builtin.find_files, { desc = "[f]ind all [F]iles" })
+			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[f]ind content by [g]rep" })
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[f]ind [b]uffer" })
+			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[f]ind [h]elp tags" })
+			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[g]o to [r]eferences" })
+			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[g]o to [d]definition" })
 		end,
 	},
 	{
