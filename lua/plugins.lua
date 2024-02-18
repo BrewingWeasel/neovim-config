@@ -71,8 +71,8 @@ require("lazy").setup({
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		opts = {
 			ensure_installed = {
-				"rust-analyzer",
-				"lua-language-server",
+				"prettierd",
+				"rustywind",
 				"stylua",
 			},
 		},
@@ -98,6 +98,7 @@ require("lazy").setup({
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				rust = { "rustfmt" },
+				vue = { "prettierd", "rustywind" },
 			},
 			format_on_save = { timeout_ms = 500, lsp_fallback = true },
 		},
@@ -110,6 +111,8 @@ require("lazy").setup({
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+			lspconfig.volar.setup({ capabilities = capabilities })
+			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 				on_init = function(client)
@@ -170,6 +173,14 @@ require("lazy").setup({
 				end,
 			})
 		end,
+		dependencies = {
+			{
+				"williamboman/mason-lspconfig.nvim",
+				opts = {
+					automatic_installation = true,
+				},
+			},
+		},
 	},
 	{
 		"nvim-telescope/telescope.nvim",
@@ -237,12 +248,6 @@ require("lazy").setup({
 					{ name = "buffer" },
 				},
 			})
-			-- Set up lspconfig.
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-			require("lspconfig")["<YOUR_LSP_SERVER>"].setup({
-				capabilities = capabilities,
-			})
 		end,
 	},
 	{
@@ -259,7 +264,7 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "rust", "lua", "python", "c", "vimdoc", "query", "elixir", "gleam" },
+				ensure_installed = { "rust", "lua", "python", "c", "vimdoc", "query", "elixir", "gleam", "typescript" },
 				auto_install = true,
 				highlight = {
 					enable = true,
