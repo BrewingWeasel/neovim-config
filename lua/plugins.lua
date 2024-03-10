@@ -265,7 +265,22 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "rust", "lua", "python", "c", "vimdoc", "query", "elixir", "gleam", "typescript" },
+				ensure_installed = {
+					"rust",
+					"lua",
+					"python",
+					"c",
+					"vimdoc",
+					"query",
+					"elixir",
+					"gleam",
+					"typescript",
+					"bash",
+					"fish",
+					"hyprlang",
+					"rasi",
+					"fish",
+				},
 				auto_install = true,
 				highlight = {
 					enable = true,
