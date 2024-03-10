@@ -15,10 +15,25 @@ vim.opt.tabstop = tabs_num
 vim.opt.shiftwidth = tabs_num
 
 vim.opt.virtualedit = "block"
+
+-- Case-insensitive searching UNLESS \C or capital in search
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- visual
 vim.opt.scrolloff = 5
 vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
+
+vim.opt.undofile = true
+
+vim.filetype.add({
+	extension = { rasi = "rasi" },
+	pattern = {
+		[".*/waybar/config"] = "jsonc",
+		[".*/mako/config"] = "dosini",
+		[".*/kitty/*.conf"] = "bash",
+		[".*/hypr/.*%.conf"] = "hyprlang",
+	},
+})
