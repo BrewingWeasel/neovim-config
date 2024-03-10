@@ -40,7 +40,7 @@ require("lazy").setup({
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {}, -- this is equalent to setup({}) function
+		opts = {},
 	},
 	{
 		"lewis6991/gitsigns.nvim",
@@ -195,6 +195,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[f]ind content by [g]rep" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[f]ind [b]uffer" })
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[f]ind [h]elp tags" })
+			vim.keymap.set("n", "<leader>fs", builtin.treesitter, { desc = "[f]ind treesitter [s]ymbols" })
 			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[g]o to [r]eferences" })
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[g]o to [d]definition" })
 		end,
