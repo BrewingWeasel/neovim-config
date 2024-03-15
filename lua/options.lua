@@ -37,3 +37,5 @@ vim.filetype.add({
 		[".*/hypr/.*%.conf"] = "hyprlang",
 	},
 })
+
+vim.opt.spelllang = { "en", "lt" }
