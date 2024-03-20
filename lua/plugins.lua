@@ -110,7 +110,7 @@ require("lazy").setup({
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+			-- lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 			lspconfig.volar.setup({ capabilities = capabilities })
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.gleam.setup({ capabilities = capabilities })
@@ -200,6 +200,29 @@ require("lazy").setup({
 			vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[g]o to [r]eferences" })
 			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[g]o to [d]definition" })
 		end,
+	},
+	{
+		"mrcjkb/rustaceanvim", -- TODO: testing
+		version = "^4", -- Recommended
+		ft = { "rust" },
+		keys = {
+			{
+				"<leader>cp",
+				function()
+					vim.cmd.RustLsp("openCargo")
+				end,
+				mode = "",
+				desc = "Open cargo.toml",
+			},
+			{
+				"<leader>cE",
+				function()
+					vim.cmd.RustLsp("explainError")
+				end,
+				mode = "",
+				desc = "explain rust error",
+			},
+		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
