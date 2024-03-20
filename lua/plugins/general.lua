@@ -1,37 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "/customconfig/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup({
-	{
-		"ray-x/aurora",
-		config = function()
-			vim.cmd.colorscheme("aurora")
-		end,
-	},
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 250
-		end,
-		opts = {},
-	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {},
-	},
+return {
 	{
 		"numToStr/Comment.nvim",
 		opts = {},
@@ -41,23 +8,6 @@ require("lazy").setup({
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {},
-	},
-	{
-		"lewis6991/gitsigns.nvim",
-		opts = {},
-		lazy = false,
-	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
 	},
 	{
 		"folke/neodev.nvim",
@@ -335,4 +285,4 @@ require("lazy").setup({
 			n_lines = 20,
 		},
 	},
-})
+}
