@@ -54,6 +54,7 @@ return {
 			lspconfig.volar.setup({ capabilities = capabilities })
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.gleam.setup({ capabilities = capabilities })
+			lspconfig.elp.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 				on_init = function(client)
@@ -118,7 +119,7 @@ return {
 			{
 				"williamboman/mason-lspconfig.nvim",
 				opts = {
-					automatic_installation = true,
+					automatic_installation = false,
 				},
 			},
 		},
