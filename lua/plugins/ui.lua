@@ -2,11 +2,31 @@ return {
 	-- colorscheme
 	{
 		"ray-x/aurora",
+		-- config = function()
+		-- 	vim.cmd.colorscheme("aurora")
+		-- end,
+	},
+	{
+		"Yazeed1s/oh-lucy.nvim",
 		config = function()
-			vim.cmd.colorscheme("aurora")
+			vim.cmd.colorscheme("oh-lucy")
 		end,
 	},
-
+	{ "rose-pine/neovim", name = "rose-pine" },
+	-- {
+	-- 	"eldritch-theme/eldritch.nvim",
+	-- },
+	-- {
+	-- 	"Everblush/nvim",
+	-- 	name = "everblush",
+	-- },
+	-- {
+	-- 	"embark-theme/vim",
+	-- 	name = "embark",
+	-- },
+	-- {
+	-- 	"shaunsingh/moonlight.nvim",
+	-- },
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
