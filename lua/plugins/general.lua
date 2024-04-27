@@ -14,6 +14,7 @@ return {
 				"prettierd",
 				"rustywind",
 				"stylua",
+				"gopls",
 			},
 		},
 		lazy = false,
@@ -37,7 +38,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "isort", "black" },
-				rust = { "rustfmt" },
+				rust = { "rustfmt --edition 2021" },
 				vue = { "prettierd", "rustywind" },
 			},
 			format_on_save = { timeout_ms = 500, lsp_fallback = true },
@@ -55,6 +56,7 @@ return {
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.gleam.setup({ capabilities = capabilities })
 			lspconfig.elp.setup({ capabilities = capabilities })
+			lspconfig.gopls.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 				on_init = function(client)
